@@ -1,22 +1,23 @@
 package back_end_task.api.controllers;
 
+
 import back_end_task.api.configuration.Mapper;
 import back_end_task.api.dtos.ClientDTO;
 import back_end_task.api.dtos.ClientDTOCreation;
+import back_end_task.api.dtos.ClientDTOCreationWithEmail;
 import back_end_task.api.dtos.ClientDTOCreationWithPhone;
-import back_end_task.api.dtos.EmailDTOCreation;
+
 import back_end_task.api.service.ClientService;
 
 
-import back_end_task.model.Client;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
+
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
@@ -76,18 +77,18 @@ public class ClientController {
     }
 
     @PostMapping("/addClient/withEmail")
-    public ResponseEntity<v> addClient(@RequestBody ClientDTOCreation clientDTOCreation) {
+    public ResponseEntity<ClientDTOCreationWithEmail> addClient(@RequestBody ClientDTOCreationWithEmail clientDTOCreationWithEmail) {
 
         try {
-            clientService.createClient(mapper.toClientWithPhone(clientDTOCreationWithPhone));
-            return new ResponseEntity<>(clientDTOCreationWithPhone,HttpStatus.OK);
+            clientService.createClient(mapper.toClientWithEmail(clientDTOCreationWithEmail));
+            return new ResponseEntity<>(clientDTOCreationWithEmail,HttpStatus.OK);
         } catch (Exception e) {
             System.out.println(e.getMessage());
 
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 
         }
-return null;
+
     }
 
 
