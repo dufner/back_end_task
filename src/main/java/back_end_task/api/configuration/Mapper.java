@@ -1,10 +1,7 @@
 package back_end_task.api.configuration;
 
-import back_end_task.api.dtos.ClientDTO;
-import back_end_task.api.dtos.ClientDTOCreation;
+import back_end_task.api.dtos.*;
 
-import back_end_task.api.dtos.ClientDTOCreationWithPhone;
-import back_end_task.api.dtos.EmailDTOCreation;
 import back_end_task.model.Client;
 import back_end_task.model.Email;
 import back_end_task.model.PhoneNumber;
@@ -42,4 +39,11 @@ public class Mapper {
         client.setPhone_numbers(List.of(phoneNumber));
         return client;
     }
+    public Client toClientWithEmail(ClientDTOCreationWithEmail clientDTO) {
+        Client client = new Client(clientDTO.getFirstName(), clientDTO.getLastName());
+        Email email = new Email(clientDTO.getEmail());
+        client.setEmails(List.of(email));
+        return client;
+    }
+
 }

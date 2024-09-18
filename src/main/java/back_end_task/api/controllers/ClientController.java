@@ -76,17 +76,17 @@ public class ClientController {
     }
 
     @PostMapping("/addClient/withEmail")
-    public ResponseEntity<ClientDTOCreationWithPhone> addClient(@RequestBody ClientDTOCreation clientDTOCreation, @RequestBody EmailDTOCreation emailDTOCreation ) {
+    public ResponseEntity<v> addClient(@RequestBody ClientDTOCreation clientDTOCreation) {
 
-//        try {
-//            clientService.createClient(mapper.toClientWithPhone(clientDTOCreationWithPhone));
-//            return new ResponseEntity<>(clientDTOCreationWithPhone,HttpStatus.OK);
-//        } catch (Exception e) {
-//            System.out.println(e.getMessage());
-//
-//            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-//
-//        }
+        try {
+            clientService.createClient(mapper.toClientWithPhone(clientDTOCreationWithPhone));
+            return new ResponseEntity<>(clientDTOCreationWithPhone,HttpStatus.OK);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
+        }
 return null;
     }
 
