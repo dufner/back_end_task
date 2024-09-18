@@ -75,7 +75,7 @@ public class ClientController {
 
     }
 
-    @PostMapping("/addClient/withPhoneNumber")
+    @PostMapping("/addClient/withEmail")
     public ResponseEntity<ClientDTOCreationWithPhone> addClient(@RequestBody ClientDTOCreation clientDTOCreation, @RequestBody EmailDTOCreation emailDTOCreation ) {
 
 //        try {
