@@ -6,7 +6,10 @@ import lombok.Setter;
 @Setter
 @Getter
 
-public class PhoneNumberDTOCreation {
+public class PhoneNumberDTO {
     private String phoneNumber;
-    private Long idClient;
+
+    public PhoneNumberDTO(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 }

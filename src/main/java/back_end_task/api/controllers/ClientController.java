@@ -88,6 +88,13 @@ public class ClientController {
         }
 
     }
+    @GetMapping("/findByID/{id_client}")
+    @ResponseBody
+    public ResponseEntity<ClientDTO> findByID(@PathVariable Long id_client) {
+        ClientDTO clientDTO = clientMapper.toDto(clientService.findById(id_client)) ;
+        return new ResponseEntity<>(clientDTO, HttpStatus.OK);
+    }
+
 
 
 

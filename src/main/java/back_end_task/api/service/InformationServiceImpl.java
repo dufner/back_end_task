@@ -1,10 +1,7 @@
 package back_end_task.api.service;
 
-import back_end_task.api.dtos.ClientDTOWithEmailsAndPhoneNumbers;
-import back_end_task.api.repositories.ClientRepository;
 import back_end_task.api.repositories.EmailRepository;
 import back_end_task.api.repositories.PhoneNumberRepository;
-import back_end_task.model.Client;
 import back_end_task.model.Email;
 import back_end_task.model.PhoneNumber;
 import org.springframework.beans.factory.annotation.Autowired;

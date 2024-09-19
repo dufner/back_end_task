@@ -6,11 +6,11 @@ import lombok.Setter;
 @Setter
 @Getter
 
-public class EmailDTOCreation {
+public class EmailDTO {
     private String email;
-    private Long idClient;
 
-    public EmailDTOCreation(String email) {
+
+    public EmailDTO(String email) {
         this.email = email;
     }
 }

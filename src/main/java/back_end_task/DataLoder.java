@@ -3,11 +3,13 @@ package back_end_task;//package task_manager.api;
 
 import back_end_task.model.Client;
 import back_end_task.model.Email;
-import back_end_task.model.PhoneNumber;
 import back_end_task.api.repositories.ClientRepository;
 import back_end_task.api.repositories.EmailRepository;
 import back_end_task.api.repositories.PhoneNumberRepository;
+
+import back_end_task.model.PhoneNumber;
 import com.github.javafaker.Faker;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
