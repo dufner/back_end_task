@@ -18,10 +18,8 @@ import static javax.persistence.GenerationType.SEQUENCE;
         uniqueConstraints = {
                 @UniqueConstraint(name = "phone_number_unique", columnNames = "phone_number")}
 )
-public class PhoneNumber {
-    public PhoneNumber(String phone_number) {
-        this.phone_number = phone_number;
-    }
+public class PhoneNumber  {
+
 
     @Id
     @SequenceGenerator(
@@ -56,5 +54,9 @@ public class PhoneNumber {
             )
     )
     private Client client;
+
+    public PhoneNumber(String phone_number) {
+        this.phone_number = phone_number;
+    }
 
 }

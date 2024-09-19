@@ -74,8 +74,8 @@ public class InformationController {
     @GetMapping("/phone_numbers/{id_client}")
     public  ResponseEntity<List<PhoneNumberDTO>> showAllPhoneNumbers(@PathVariable Long id_client) {
         try {
-            List<PhoneNumberDTO> listEmailDto =  informationService.getPhonesNumbers(id_client).stream().map(phoneMapper::toDto).collect(Collectors.toList());
-            return new ResponseEntity<>(listEmailDto,HttpStatus.OK);
+            List<PhoneNumberDTO> phoneNumberDTOS =  informationService.getPhonesNumbers(id_client).stream().map(phoneMapper::toDto).collect(Collectors.toList());
+            return new ResponseEntity<>(phoneNumberDTOS,HttpStatus.OK);
         } catch (ConstraintViolationException e) {
             System.out.println(e.getMessage());
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -84,6 +84,22 @@ public class InformationController {
 
     }
 
+
+    // some tests
+    @GetMapping("/contacts/{id_client}")
+    public  ResponseEntity<Object> showAllInformation(@PathVariable Long id_client) {
+        try {
+            List<Object> listEmailDto =  informationService.getEmails(id_client).stream().map(emailMapper::toDto).collect(Collectors.toList());
+            List<Object> phoneNumberDTOS =  informationService.getPhonesNumbers(id_client).stream().map(phoneMapper::toDto).collect(Collectors.toList());
+                listEmailDto.addAll(phoneNumberDTOS);
+            return new ResponseEntity<>(listEmailDto,HttpStatus.OK);
+        } catch (ConstraintViolationException e) {
+            System.out.println(e.getMessage());
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
+        }
+
+    }
 
 
 }

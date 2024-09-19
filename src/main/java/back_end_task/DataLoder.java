@@ -20,9 +20,7 @@ public class DataLoder {
 
     @Bean
     public CommandLineRunner dataLoader(
-            ClientRepository clientRepository,
-            EmailRepository emailRepository,
-            PhoneNumberRepository phoneNumberRepository) {
+            ClientRepository clientRepository) {
 
         return args -> {
             for (int i = 0; i < 5; i++) {

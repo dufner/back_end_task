@@ -19,6 +19,9 @@ import static javax.persistence.GenerationType.SEQUENCE;
                 @UniqueConstraint(name = "email_unique", columnNames = "email")}
 )
 public class Email {
+
+
+
     @Id
     @SequenceGenerator(
             name = "email_sequence",
@@ -40,7 +43,7 @@ public class Email {
             nullable = false,
             columnDefinition = "TEXT"
     )
-    private String email;
+    private String information;
 
     @ManyToOne
     @JoinColumn(
@@ -53,8 +56,9 @@ public class Email {
     )
     private Client client;
 
-    public Email(String email) {
-        this.email = email;
+    public Email(String information) {
+        this.information = information;
     }
+
 
 }

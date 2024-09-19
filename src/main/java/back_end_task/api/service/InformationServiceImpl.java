@@ -14,7 +14,7 @@ public class InformationServiceImpl implements InformationService {
 
 
     private EmailRepository emailRepository;
-    private PhoneNumberRepository phoneNumberRepository;
+    private  PhoneNumberRepository phoneNumberRepository;
 
     @Autowired
     public InformationServiceImpl(EmailRepository emailRepository, PhoneNumberRepository phoneNumberRepository) {

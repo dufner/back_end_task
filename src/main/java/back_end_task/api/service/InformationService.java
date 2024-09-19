@@ -1,5 +1,6 @@
 package back_end_task.api.service;
 
+import back_end_task.model.Client;
 import back_end_task.model.Email;
 import back_end_task.model.PhoneNumber;
 
@@ -13,6 +14,12 @@ public interface InformationService {
     List<Email> getEmails (Long id);
 
    List<PhoneNumber> getPhonesNumbers (Long id);
+
+//    Iterable getEmails (Client client);
+////
+//    List<PhoneNumber> getPhonesNumbers (Client id);
+
+
 
     //TODO implement more methods
 

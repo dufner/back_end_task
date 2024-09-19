@@ -22,7 +22,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @Table(
         name = "clients"
 )
-public class Client {
+public class Client   {
 
 
 

@@ -16,6 +16,6 @@ public class EmailMapper {
 
 
     public EmailDTO toDto(Email email) {
-        return  new EmailDTO(email.getEmail());
+        return  new EmailDTO(email.getInformation());
     }
 }
