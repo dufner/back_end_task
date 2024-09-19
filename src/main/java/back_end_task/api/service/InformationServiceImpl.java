@@ -40,7 +40,7 @@ public class InformationServiceImpl implements InformationService {
 
     @Override
     public List<PhoneNumber> getPhonesNumbers(Long id) {
-        return null;
+        return phoneNumberRepository.findByClient_Id(id);
     }
 }
 

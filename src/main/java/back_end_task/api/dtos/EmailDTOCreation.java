@@ -10,7 +10,5 @@ public class EmailDTOCreation {
     private String email;
     private Long idClient;
 
-    public EmailDTOCreation(String email) {
-        this.email = email;
-    }
+
 }
