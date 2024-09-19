@@ -25,6 +25,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
 public class Client {
 
 
+
     @Id
     @SequenceGenerator(
             name = "clients_sequence",
@@ -89,5 +90,9 @@ public class Client {
             this.phone_numbers.add(phoneNumber);
             phoneNumber.setClient(this);
         }
+
+    public Client(Long id) {
+        this.id = id;
+    }
 
 }

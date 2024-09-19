@@ -8,4 +8,5 @@ import lombok.Setter;
 
 public class EmailDTOCreation {
     private String email;
+    private Long idClient;
 }

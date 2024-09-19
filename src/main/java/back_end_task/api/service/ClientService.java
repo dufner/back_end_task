@@ -8,20 +8,9 @@ import java.util.List;
 
 public interface ClientService {
     Client createClient(Client Client);
-
-    Client addContact(PhoneNumber phoneNumber);
-
     List<Client> findAll();
 
-    List<Email> getInformation(Long id);
     //TODO implement more methods
 
 
-//    Client getClientByEmail(String email);
-//
-//    boolean isClientEmailPresent(String email);
-//
-//    Client getClientById(Long ClientId);
-//
-//    void deleteClient(Long id);
 }

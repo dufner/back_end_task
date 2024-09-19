@@ -1,4 +1,4 @@
-package back_end_task.api;//package task_manager.api;
+package back_end_task;//package task_manager.api;
 
 
 import back_end_task.model.Client;

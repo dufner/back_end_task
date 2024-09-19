@@ -1,11 +1,9 @@
 package back_end_task.api.controllers;
 
 
-import back_end_task.api.configuration.Mapper;
-import back_end_task.api.dtos.ClientDTO;
-import back_end_task.api.dtos.ClientDTOCreation;
-import back_end_task.api.dtos.ClientDTOCreationWithEmail;
-import back_end_task.api.dtos.ClientDTOCreationWithPhone;
+import back_end_task.api.configuration.ClientMapper;
+import back_end_task.api.configuration.EmailMapper;
+import back_end_task.api.dtos.*;
 
 import back_end_task.api.service.ClientService;
 
@@ -27,19 +25,19 @@ public class ClientController {
 
 
     private ClientService clientService;
-    private Mapper mapper;
+    private ClientMapper clientMapper;
 
 
-    @Autowired
-    public ClientController(ClientService clientService, Mapper mapper) {
+@Autowired
+    public ClientController(ClientService clientService, ClientMapper clientMapper) {
         this.clientService = clientService;
-        this.mapper = mapper;
+        this.clientMapper = clientMapper;
     }
 
     @GetMapping
     @ResponseBody
     public ResponseEntity<List<ClientDTO>> showAll() {
-        List<ClientDTO> clientDTOs =  clientService.findAll().stream().map(mapper::toDto).collect(Collectors.toList());
+        List<ClientDTO> clientDTOs =  clientService.findAll().stream().map(clientMapper::toDto).collect(Collectors.toList());
         return new ResponseEntity<>(clientDTOs, HttpStatus.OK);
     }
 
@@ -47,7 +45,7 @@ public class ClientController {
     public ResponseEntity<ClientDTOCreation> addClient(@RequestBody ClientDTOCreation clientDTO) {
 
         try {
-            clientService.createClient(mapper.toClient(clientDTO));
+            clientService.createClient(clientMapper.toClient(clientDTO));
             return new ResponseEntity<>(clientDTO, HttpStatus.OK);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -65,7 +63,7 @@ public class ClientController {
     public ResponseEntity<ClientDTOCreationWithPhone> addClient(@RequestBody ClientDTOCreationWithPhone clientDTOCreationWithPhone) {
 
         try {
-            clientService.createClient(mapper.toClientWithPhone(clientDTOCreationWithPhone));
+            clientService.createClient(clientMapper.toClientWithPhone(clientDTOCreationWithPhone));
             return new ResponseEntity<>(clientDTOCreationWithPhone,HttpStatus.OK);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -80,7 +78,7 @@ public class ClientController {
     public ResponseEntity<ClientDTOCreationWithEmail> addClient(@RequestBody ClientDTOCreationWithEmail clientDTOCreationWithEmail) {
 
         try {
-            clientService.createClient(mapper.toClientWithEmail(clientDTOCreationWithEmail));
+            clientService.createClient(clientMapper.toClientWithEmail(clientDTOCreationWithEmail));
             return new ResponseEntity<>(clientDTOCreationWithEmail,HttpStatus.OK);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -90,6 +88,8 @@ public class ClientController {
         }
 
     }
+
+
 
 
 
