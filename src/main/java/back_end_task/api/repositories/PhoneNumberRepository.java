@@ -12,5 +12,4 @@ public interface PhoneNumberRepository extends JpaRepository<PhoneNumber, Long> 
     @Query("select p from PhoneNumber p where p.client.id = ?1")
     List<PhoneNumber> findByClient_Id(Long id);
 
-
 }

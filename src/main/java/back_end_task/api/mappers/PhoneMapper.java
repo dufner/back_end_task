@@ -1,10 +1,8 @@
-package back_end_task.api.configuration;
+package back_end_task.api.mappers;
 
-import back_end_task.api.dtos.EmailDTO;
 import back_end_task.api.dtos.PhoneNumberDTO;
 import back_end_task.api.dtos.PhoneNumberDTOCreation;
 import back_end_task.model.Client;
-import back_end_task.model.Email;
 import back_end_task.model.PhoneNumber;
 import org.springframework.stereotype.Component;
 

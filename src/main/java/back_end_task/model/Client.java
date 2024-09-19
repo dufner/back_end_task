@@ -16,15 +16,9 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @Getter
 @Setter
 
-@Entity(
-        name = "Client"
-)
-@Table(
-        name = "clients"
-)
+@Entity(name = "Client")
+@Table(name = "clients")
 public class Client   {
-
-
 
     @Id
     @SequenceGenerator(
@@ -78,21 +72,21 @@ public class Client   {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+    public Client(Long id) {
+        this.id = id;
+    }
 
     public void addemail(Email email) {
         if (!this.emails.contains(email))
             this.emails.add(email);
-            email.setClient(this);
-        }
+        email.setClient(this);
+    }
 
     public void addphonenumber (PhoneNumber phoneNumber ) {
         if (!this.phone_numbers.contains(phoneNumber))
             this.phone_numbers.add(phoneNumber);
-            phoneNumber.setClient(this);
-        }
-
-    public Client(Long id) {
-        this.id = id;
+        phoneNumber.setClient(this);
     }
+
 
 }

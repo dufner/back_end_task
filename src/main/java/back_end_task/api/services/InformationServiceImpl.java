@@ -1,4 +1,4 @@
-package back_end_task.api.service;
+package back_end_task.api.services;
 
 import back_end_task.api.repositories.EmailRepository;
 import back_end_task.api.repositories.PhoneNumberRepository;
@@ -11,18 +11,13 @@ import java.util.List;
 
 @Service
 public class InformationServiceImpl implements InformationService {
-
-
     private EmailRepository emailRepository;
     private  PhoneNumberRepository phoneNumberRepository;
-
     @Autowired
     public InformationServiceImpl(EmailRepository emailRepository, PhoneNumberRepository phoneNumberRepository) {
         this.emailRepository = emailRepository;
         this.phoneNumberRepository = phoneNumberRepository;
     }
-
-
     @Override
     public PhoneNumber addContact(PhoneNumber phoneNumber) {
         return phoneNumberRepository.save(phoneNumber);

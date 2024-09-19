@@ -20,7 +20,6 @@ import static javax.persistence.GenerationType.SEQUENCE;
 )
 public class PhoneNumber  {
 
-
     @Id
     @SequenceGenerator(
             name = "phone_number_sequence",

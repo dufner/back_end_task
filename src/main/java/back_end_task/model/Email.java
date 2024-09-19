@@ -20,8 +20,6 @@ import static javax.persistence.GenerationType.SEQUENCE;
 )
 public class Email {
 
-
-
     @Id
     @SequenceGenerator(
             name = "email_sequence",

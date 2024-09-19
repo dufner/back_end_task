@@ -1,14 +1,13 @@
 package back_end_task.api.controllers;
 
 
-import back_end_task.api.configuration.ClientMapper;
-import back_end_task.api.configuration.EmailMapper;
+import back_end_task.api.mappers.ClientMapper;
 import back_end_task.api.dtos.*;
 
-import back_end_task.api.service.ClientService;
+import back_end_task.api.services.ClientService;
 
 
-
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +33,7 @@ public class ClientController {
         this.clientMapper = clientMapper;
     }
 
-    @GetMapping
+    @GetMapping("/allClients")
     @ResponseBody
     public ResponseEntity<List<ClientDTO>> showAll() {
         List<ClientDTO> clientDTOs =  clientService.findAll().stream().map(clientMapper::toDto).collect(Collectors.toList());
@@ -47,14 +46,8 @@ public class ClientController {
         try {
             clientService.createClient(clientMapper.toClient(clientDTO));
             return new ResponseEntity<>(clientDTO, HttpStatus.OK);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.out.println("Сделай так {\n" +
-                    "  \"firstName\": \"string\",\n" +
-                    "  \"lastName\": \"string\"\n" +
-                    "}");
+        } catch (ConstraintViolationException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-
         }
 
     }
@@ -65,9 +58,8 @@ public class ClientController {
         try {
             clientService.createClient(clientMapper.toClientWithPhone(clientDTOCreationWithPhone));
             return new ResponseEntity<>(clientDTOCreationWithPhone,HttpStatus.OK);
-        } catch (Exception e) {
+        } catch (ConstraintViolationException e) {
             System.out.println(e.getMessage());
-
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 
         }
@@ -80,9 +72,8 @@ public class ClientController {
         try {
             clientService.createClient(clientMapper.toClientWithEmail(clientDTOCreationWithEmail));
             return new ResponseEntity<>(clientDTOCreationWithEmail,HttpStatus.OK);
-        } catch (Exception e) {
+        } catch (ConstraintViolationException e) {
             System.out.println(e.getMessage());
-
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 
         }

@@ -8,7 +8,6 @@ import lombok.Setter;
 
 public class PhoneNumberDTO  {
     private String phoneNumber;
-
     public PhoneNumberDTO(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }

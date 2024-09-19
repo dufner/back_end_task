@@ -1,10 +1,10 @@
 package back_end_task.api.controllers;
 
 
-import back_end_task.api.configuration.EmailMapper;
-import back_end_task.api.configuration.PhoneMapper;
+import back_end_task.api.mappers.EmailMapper;
+import back_end_task.api.mappers.PhoneMapper;
 import back_end_task.api.dtos.*;
-import back_end_task.api.service.InformationService;
+import back_end_task.api.services.InformationService;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

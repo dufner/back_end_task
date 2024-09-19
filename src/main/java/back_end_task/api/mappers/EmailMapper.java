@@ -1,4 +1,4 @@
-package back_end_task.api.configuration;
+package back_end_task.api.mappers;
 
 import back_end_task.api.dtos.EmailDTO;
 import back_end_task.api.dtos.EmailDTOCreation;

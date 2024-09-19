@@ -12,5 +12,4 @@ public interface EmailRepository extends JpaRepository<Email, Long> {
     @Query("select e from Email e where e.client.id = ?1")
     List<Email> findByClient_Id(Long id);
 
-
 }
