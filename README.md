@@ -4,9 +4,9 @@
 
 Для работы приложения нужно создать базу back_end_task  c user postgres password postgres или изменить настройки. 
 
-Описание api
-все end points находятся здесь: 
+Описание api.
 
+Все end points находятся здесь: 
 1) Добавление нового клиента
    http://localhost:8080/api/addClient
    Добавление нового клиента с email
