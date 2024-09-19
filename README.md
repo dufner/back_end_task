@@ -1,12 +1,12 @@
 # back_end_task
-Задача для бек енд. 
+Задача для бек енд.
 Для тестирования api создал bootstrap c помощью javafaker в классе DataLoder.
 
-Для работы приложения нужно создать базу back_end_task  c user postgres password postgres или изменить настройки. 
+Для работы приложения нужно создать базу back_end_task  c user: postgres password: postgres или изменить настройки.
 
 Описание api.
 
-Все end points находятся здесь: 
+Все end points находятся здесь:
 1) Добавление нового клиента
    http://localhost:8080/api/addClient
    Добавление нового клиента с email
@@ -27,5 +27,3 @@
    http://localhost:8080/api/phone_numbers/{id}
 
 http://localhost:8080/swagger-ui/
-
- Для написания Uni тестирование не хватило времени.
