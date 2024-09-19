@@ -1,10 +1,10 @@
 # back_end_task
-Задача по бек енд. 
+Задача для бек енд. 
 Для тестирования api создал bootstrap c помощью javafaker в классе DataLoder.
 
 Для работы приложения нужно создать базу back_end_task  c user postgres password postgres или изменить настройки. 
 
-Описание api:
+Описание api
 все end points находятся здесь: 
 
 1) Добавление нового клиента
