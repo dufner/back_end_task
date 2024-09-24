@@ -1,13 +1,13 @@
-package com.example.back_end_task;
+package com.example.task_manager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackEndTaskApplicationTests {
+class TaskManagerApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }

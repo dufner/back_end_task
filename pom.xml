@@ -9,12 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>Task_Manager</artifactId>
+    <artifactId>back_end_task</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Task_Manager</name>
-    <description>Task_Manager</description>
+    <name>back_end_task</name>
     <url/>
-
 
     <dependencies>
         <dependency>
@@ -97,6 +95,11 @@
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

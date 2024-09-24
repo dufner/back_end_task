@@ -76,6 +76,12 @@ public class Client   {
         this.id = id;
     }
 
+    public Client(Long id, String firstName, String lastName) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public void addemail(Email email) {
         if (!this.emails.contains(email))
             this.emails.add(email);

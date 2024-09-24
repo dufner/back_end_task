@@ -61,9 +61,7 @@ public class ClientController {
         } catch (ConstraintViolationException e) {
             System.out.println(e.getMessage());
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-
         }
-
     }
 
     @PostMapping("/addClient/withEmail")
@@ -75,9 +73,7 @@ public class ClientController {
         } catch (ConstraintViolationException e) {
             System.out.println(e.getMessage());
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-
         }
-
     }
     @GetMapping("/findByID/{id_client}")
     @ResponseBody
@@ -85,11 +81,6 @@ public class ClientController {
         ClientDTO clientDTO = clientMapper.toDto(clientService.findById(id_client)) ;
         return new ResponseEntity<>(clientDTO, HttpStatus.OK);
     }
-
-
-
-
-
 
 
 }
